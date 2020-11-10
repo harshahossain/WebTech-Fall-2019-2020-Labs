@@ -62,5 +62,27 @@
 	  		$err_pass="Password Requried";
 	  		$has_error=true;
 	  	}
-	  }  
+	  	elseif (!ctype_upper($_POST["pass"])|| !ctype_lower($_POST["pass"])) {
+	  		$err_pass="Password must contain a combination of uppercase and lowercase charecters!";
+	  		$has_error=true;
+	  	}
+	  	elseif (!strpos($_POST["pass"], "1") || !strpos($_POST["pass"]),"?") {
+	  		$err_pass="Password must contain at least one special charecter(Ex: 1 or ?) !";
+	  		$has_error=true;
+	  	}
+	  	else{
+	  		$pass=htmlspecialchars($_POST["pass"]);
+	  	}
+	  	if (empty($_POST["cpass"])) {
+	  		$err_cpass="Please confirm password!";
+	  		$has_error=true;
+	  	}
+	  	elseif (!$_POST["pass"]==$_POST["cpass"]) {
+	  		$err_cpass="Password does not match!";
+	  		$has_error=true;
+	  	}
+	  	else{
+	  		$cpass=htmlspecialchars($_POST["cpass"]);
+	  	}
+	  } 
  ?>
