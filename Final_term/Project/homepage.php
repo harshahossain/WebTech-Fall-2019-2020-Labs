@@ -18,9 +18,9 @@
 					<td><div class="card" style="width: 18rem;">
   					<img src="https://cdn.onlinewebfonts.com/svg/img_55417.png" class="card-img-top" alt="..." width="500" height="300">
   					<div class="card-body">
-    				<h5 class="card-title">Varifaction</h5>
-    				<p class="card-text">This is for varifying newly joined Employees, Doctors & Pharmacy-Salesman.</p>
-    				<a href="#" class="btn btn-primary stretched-link">Go to Varifications</a>
+    				<h5 class="card-title">Medicine Stock Information</h5>
+    				<p class="card-text">This is checking and updating stock.</p>
+    				<a href="accountant_stock.php" class="btn btn-primary stretched-link">Go to Stock Information</a>
   					</div></td>
   					<td> <div class="card" style="width: 18rem;">
   					<img src="https://cdn0.iconfinder.com/data/icons/users-3-1/24/person-up-reload-multiple-sync-human-natural-close-refresh-actions-user-512.png" class="card-img-top" alt="..." width="500"

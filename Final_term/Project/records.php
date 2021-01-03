@@ -1,3 +1,10 @@
+<?php
+	require_once 'controller/accountant_controller.php';
+	$query= "select  medicine.* , transaction.*, sum(unitBuyingCost * medicineUnit) as cost ,
+    	sum(unitSellingCost * medicineUnit) as revenue  FROM transaction
+        INNER JOIN medicine ON transaction.medicineId=medicine.id ";
+        $allTransaction=getAllRecord($query);
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,59 +14,39 @@
 <body>
 	<div class="jumbotron jumbotron-fluid">
   		<div class="container">
-    		<h1 class="display-4">Patients Records</h1>
-    		<p class="lead">Welcome to XYZ hospital. Use the table below to sort out patients informations & expenses.</p>
+    		<h1 class="display-4">Transactions</h1>
+    		<p class="lead">Welcome to XYZ hospital.
+    		This is the record of all the transaction.</p>
  		 </div>
+
  	</div>
  	<table class="table table-hover" align="center">
  			<tr>
- 				<th>Paitent ID</th>
- 				<th>First Name</th>
- 				<th>Last Name</th>
- 				<th>Expenses</th>
- 				<th>Paid</th>
- 				<th>Profit</th>
- 				<th>Upcoming Appointment/s</th>
-
+ 				<th>Patient ID</th>
+ 				<th>Medicine Name</th>
+ 				<th>Cost</th>
+ 				<th>Revenue</th>
+ 				
+ 				
  			</tr>
  			<?php
- 				$users=simplexml_load_file("Pinfo.xml");
- 				$data=$patients->patient;
- 				$firstName="";
- 				$lastName="";
- 				$expense="";
- 				$paid="";
- 				$uapp="";
- 				$uid="";
- 				$profit="";
- 				$i=0;
- 				for( ;$i<count($data);$i++){
- 					$firstName=$data[$i]->fName;
- 					$lastName=$data[$i]->lname;
- 					$uid=$data[$i]->id;
- 					$expense=$data[$i]->expense;
- 					$paid=$data[$i]->paid;
- 					$profit=$data[$i]->profit;
- 					$uapp=$data[$i]->uappointment;
+ 				foreach ($allTransaction as $t) {
+ 					$uid=$t["id"];
+ 					
+ 					echo "<tr>";
+ 							echo "<td> ".$t["id"]."</td>";
+ 							echo "<td> ".$t["name"]."</td>";
+ 							echo "<td> ".$t["cost"]."</td>";
+ 							echo "<td> ".$t["revenue"]."</td>";
+
+ 					echo "</tr>";
+ 				}
+ 					
  					
 
- 					echo "<tr>
- 							<td>$uid</td>
- 							<td>$firstName</td>
- 							<td>$lastName</td>
- 							<td>$expense</td>
- 							<td>$paid</td>
- 							<td>$profit</td>
- 							<td>$uapp</td>
-
- 						 </tr>";
- 				}	
-
- 			?>
+ 			  ?>
  			 
  	</table>
- 	 <a href="Ahomepage.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Accountant Homepage</a>
- 			  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" disabled>Home</a> <br>
- 			  <form action="" method="post"><input type="submit" name="logout" value="Logout"></form>
+ 
 </body>
 </html>

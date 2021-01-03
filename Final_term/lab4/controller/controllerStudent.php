@@ -79,5 +79,6 @@
 		$query="DELETE FROM students WHERE id='$sid'";
 		execute($query);
 	}
+	
 
 ?>

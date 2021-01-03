@@ -1,4 +1,5 @@
-<?php require_once 'model/accountant_db_connect.php';
+<?php 
+	require_once 'model/accountant_db_connect.php';
 	$firstName="";
 	$lastName="";
 	$email="";
@@ -14,6 +15,7 @@
 	$userType="";
 	$status="";
 	$uid="";
+	$mid="";
 
 	if (isset ($_POST["update"])) {
 		$firstName=$_POST["firstName"];
@@ -31,7 +33,7 @@
 		$userType=$_POST["userType"];
 		$status=$_POST["status"];
 		$uid=(int)$_GET["id"];
-		updateUser($firstName,$lastName,$email,$phone,$street,$city,$state,$postal,$date,$month,$year,$gender,$userType,$status);
+		updateUser($firstName,$lastName,$email,$phone,$street,$city,$state,$postal,$date,$month,$year,$gender,$userType,$status,$uid);
 	}
 	function getAllUser(){
 		$query="SELECT * FROM `users`";
@@ -47,6 +49,7 @@
 		$query="UPDATE `users` SET `firstName`='$firstName',`lastName`='$lastName',`email`='$email',`phone`='$phone',`street`='$street',`city`='$city',`state`='$state',`postal`='$postal',`bDate`='$date',`bMonth`='$month',`bYear`='$year',`gender`='$gender',`userType`='$userType',`status`='$status' 
 			WHERE `id`='$uid'";
 			execute($query);
+			echo "Updated successfully";
 
 	}
 	function deleteUser($uid){
@@ -54,8 +57,22 @@
 		execute($query);
 	}
 	function varifyUser($uid){
-		$query="UPDATE `users` SET `status`='1' WHERE `id`='uid'";
+		$query="UPDATE `users` SET `status`='1' WHERE `id`='$uid'";
 		execute($query);
 	}
+	function getAllRecord(){
+		$query="select  medicine.* , transaction.*, sum(unitBuyingCost * medicineUnit) as cost ,
+    	sum(unitSellingCost * medicineUnit) as revenue  FROM transaction
+        INNER JOIN medicine ON transaction.medicineId=medicine.id ";
+        $result=get($query);
+		return $result;
+	}
+	function getAllMedicine(){
+		$query="select * from `medicine`";
+		$result=get($query);
+		return $result;
+	}
+	
+
 
  ?>

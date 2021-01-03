@@ -15,8 +15,12 @@
 	<div class="jumbotron jumbotron-fluid">
   		<div class="container">
     		<h1 class="display-4">Update Information</h1>
-    		<p class="lead">Welcome to XYZ hospital. Use the table below to sort out users and update or delete user/s.</p>
+    		<p class="lead">Welcome to XYZ hospital. Use the table below to sort out users and update or varify or delete user/s.</p>
  		 </div>
+ 	</div>
+ 	<div align="center">
+ 		<a href="homepage.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Accountant Homepage</a>
+ 			  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" disabled>Home</a> <br>
  	</div>
  	<table class="table table-hover" align="center">
  			<tr>
@@ -28,10 +32,11 @@
  				<th>Status</th>
  				<th>Edit</th>
  				<th>Delete</th>
- 				<th>Varify</th>
+ 				
  			</tr>
  			<?php
  				foreach ($allUser as $u) {
+ 					$uid=$u["id"];
  					
  					echo "<tr>";
  							echo "<td> ".$u["id"]."</td>";
@@ -39,9 +44,11 @@
  							echo "<td> ".$u["lastName"]."</td>";
  							echo "<td> ".$u["userType"]."</td>";
  							echo "<td> ".$u["status"]."</td>";
- 							echo "<td><a href='accountant_edit.php?id=$uid' class='btn btn-info'>Update</td>";
+ 							echo "<td><a href='accountant_varify.php?id=$uid' class='btn btn-success'>Varify</td>";
+ 							echo "<td><a href='accountant_edit.php?id=$uid' class='btn btn-info'>Edit</td>";
+ 							
+ 							
  							echo "<td><a href='accountant_delete.php?id=$uid' class='btn btn-danger'>Delete</td>";
- 							echo "<td><a href='accountant_varify' class='btn btn-success'>Varify</td>";
 
  					echo "</tr>";
  				}
@@ -51,8 +58,7 @@
  			  ?>
  			 
  	</table>
- 	 <a href="homepage.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Accountant Homepage</a>
- 			  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" disabled>Home</a> <br>
+ 	 
  			  <form action="" method="post"><input type="submit" name="logout" value="Logout"></form>
 </body>
 </html>

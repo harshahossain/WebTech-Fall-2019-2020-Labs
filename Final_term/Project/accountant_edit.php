@@ -11,8 +11,17 @@
  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
  </head>
  <body>
+ 	<div class="jumbotron jumbotron-fluid">
+  		<div class="container">
+    		<h1 class="display-4">Update Information</h1>
+    		<p class="lead">Welcome to XYZ hospital. Use the table below to update users.</p>
+ 		 </div>
+ 	</div>
+ 	<dir align="center">
+ 	 <a href="homepage.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Accountant Homepage</a>
+ 			  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" disabled>Home</a> <br></dir>
 		<form method="post" onsubmit="return validate()" action="">
-			<table class="table table-hover" align="center">
+			<table class="table table-sm table-hover" align="center">
 				<thead>
 					<th>ID</th>
 					<th>First Name</th>
@@ -35,7 +44,7 @@
 						 	$d=$s["bDate"];
 						 	$m=$s["bMonth"];
 						 	$y=$s["bYear"];
-						 	$merge="$d""-"."$m"."-""$y";
+						 	$merge= "$d"." - "."$m"." - "."$y";
 						 	echo "<tr>";
 						 		echo "<td> " .$s["id"]. "</td>";
 						 		echo "<td> " .$s["firstName"]. "</td>";
