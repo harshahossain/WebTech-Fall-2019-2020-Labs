@@ -1,5 +1,5 @@
 <?php
-	require_once 'controller/accountant_controller.php';
+	require_once 'controller/stock_controller.php';
 	$query="select * from medicine";
 	$allMedicine=getAllMedicine();
  ?>
@@ -32,7 +32,7 @@
  			</tr>
  			<?php
  				foreach ($allMedicine as $m) {
- 					$uid=$m["id"];
+ 					$mid=$m["id"];
  					
  					echo "<tr>";
  							echo "<td> ".$m["id"]."</td>";
@@ -40,7 +40,7 @@
  							echo "<td> ".$m["unitBuyingCost"]."</td>";
  							echo "<td> ".$m["unitSellingCost"]."</td>";
  							echo "<td> ".$m["quantity"]."</td>";
- 							echo "<td><a href='accountant_stock_edit.php?id=$uid' class='btn btn-info'>Edit</td>";
+ 							echo "<td><a href='accountant_stock_edit.php?id=$mid' class='btn btn-info'>Edit</td>";
 
  					echo "</tr>";
  				}

@@ -35,8 +35,8 @@
   					<img src="https://cdn2.iconfinder.com/data/icons/health-care-rounded-3/512/xxx031-512.png" class="card-img-top" alt="..." width="500"
  					 height="300">
   					<div class="card-body">
-    					<h5 class="card-title">Patients Records</h5>
-    					<p class="card-text">This is for checking Patients medical records, expenses & appointments.</p>
+    					<h5 class="card-title">Transaction</h5>
+    					<p class="card-text">This is for checking Transaction regarding Patients medical records & expenses .</p>
     					<a href="records.php" class="btn btn-primary stretched-link">View Patient Information</a>
   					</div>
   					</div></td>

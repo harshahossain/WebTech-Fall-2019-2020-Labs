@@ -1,7 +1,7 @@
 <?php 
-	require_once 'controller/accountant_controller.php';
+	require_once 'controller/stock_controller.php';
 	$userId=$_GET["id"];
-	$user=getAMedicine($userId);
+	$medicine=getMedicine($userId);
  ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +20,7 @@
  	 <a href="homepage.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Accountant Homepage</a>
  			  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" disabled>Home</a> <br></div>
 
-         
+         <form method="post" action="">
 			<table class="table table-sm table-hover" align="center">
 				<thead>
 				<tr>
@@ -29,7 +29,7 @@
  					<th>Buying Cost</th>
  					<th>Selling Price</th>
  					<th>Stock</th>
- 				<th>Update</th>
+ 				    <th>Update</th>
  				
  			</tr>
 				</thead>

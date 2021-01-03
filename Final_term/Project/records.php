@@ -18,6 +18,10 @@
     		<p class="lead">Welcome to XYZ hospital.
     		This is the record of all the transaction.</p>
  		 </div>
+ 		 <div align="center">
+ 		<a href="homepage.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Accountant Homepage</a>
+ 			  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" disabled>Home</a> <br>
+ 	</div>
 
  	</div>
  	<table class="table table-hover" align="center">

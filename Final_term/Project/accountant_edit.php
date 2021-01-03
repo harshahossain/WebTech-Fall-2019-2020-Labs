@@ -17,9 +17,11 @@
     		<p class="lead">Welcome to XYZ hospital. Use the table below to update users.</p>
  		 </div>
  	</div>
- 	<dir align="center">
+ 	<div align="center">
  	 <a href="homepage.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Accountant Homepage</a>
- 			  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" disabled>Home</a> <br></dir>
+ 			  <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" disabled>Home</a> <br></div>
+ 			  <br>
+ 			  <br>
 		<form method="post" onsubmit="return validate()" action="">
 			<table class="table table-sm table-hover" align="center">
 				<thead>
@@ -59,6 +61,7 @@
 						 		echo "<td> " .$s["gender"]. "</td>";
 						 		echo "<td> " .$s["userType"]. "</td>";
 						 		echo "<td> " .$s["status"]. "</td>";
+						 	echo "</tr>";
 					     } 
 					 ?>
 					 <tr>
